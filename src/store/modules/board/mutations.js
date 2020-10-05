@@ -9,7 +9,6 @@ const mutations = {
         column = {
           ...column,
           tasks,
-          error: false,
         };
       }
       return column;

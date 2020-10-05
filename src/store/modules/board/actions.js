@@ -20,6 +20,7 @@ const actions = {
         }
         commit('SET_COLUMNS', data);
         commit('SET_COLUMNS_LOADING', false);
+        commit('SET_COLUMNS_ERROR', false);
         resolve();
       }).catch((error) => {
         commit('SET_COLUMNS_LOADING', false);

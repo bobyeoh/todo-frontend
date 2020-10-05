@@ -19,7 +19,7 @@
         v-for="column in columns"
         :key="column.id"
         :column="column"
-        @get-tasks="getTasks"
+        :get-tasks="getTasks"
       />
     </div>
   </div>
