@@ -34,11 +34,11 @@ const actions = {
     return new Promise((resolve, reject) => {
       const params = { id: columnID };
       request(API.taskGet, params).then((res) => {
+        commit('SET_TASKS_LOADING', { loading: false, columnID });
         if (res.data && res.data.tasks) {
           const tasks = [...res.data.tasks];
           commit('SET_TASKS', { tasks, columnID });
         }
-        commit('SET_TASKS_LOADING', { loading: false, columnID });
         resolve();
       }).catch((error) => {
         commit('SET_TASKS_ERROR', { error: true, columnID });

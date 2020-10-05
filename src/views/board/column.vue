@@ -39,6 +39,9 @@ export default {
       default: () => true,
     },
   },
+  created() {
+    console.log(this.column);
+  },
 };
 </script>
 <style lang="scss" scoped>

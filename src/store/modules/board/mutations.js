@@ -6,9 +6,11 @@ const mutations = {
   SET_TASKS: (state, { tasks, columnID }) => {
     state.columns = state.columns.map((column) => {
       if (column.id === columnID) {
-        column.tasks = tasks;
-        column.error = false;
-        column.loading = false;
+        column = {
+          ...column,
+          tasks,
+          error: false,
+        };
       }
       return column;
     });
@@ -56,7 +58,6 @@ const mutations = {
     state.columns = state.columns.map((column) => {
       if (column.id === columnID) {
         column.error = error;
-        column.loading = false;
       }
       return column;
     });
